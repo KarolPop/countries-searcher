@@ -1,0 +1,49 @@
+body {
+	background-image: url(img/background.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover; 
+	background-size: cover; 
+}
+
+main {
+	max-width: 600px;
+	margin: 10% auto;
+	text-align: center;
+	background-color: white;
+	opacity: 0.5;
+	border-radius: 10px;
+
+}
+h1 {
+	padding-top: 20px;
+}
+
+h2:before {
+   font-family: FontAwesome;
+   content: '\f10d';
+   display: inline-block;
+   padding: 10px;
+   vertical-align: middle;
+}
+
+h2:after {
+   font-family: FontAwesome;
+   content: '\f10e';
+   display: inline-block;
+   padding: 10px;
+   vertical-align: middle;
+}
+
+button {
+	border-radius: 5px;
+	width: 100px;
+	font-size: 20px;
+}
+ 
+.fa, a.tweet {
+	font-size: 20px;
+}
