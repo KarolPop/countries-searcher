@@ -14,7 +14,7 @@ main {
 	margin: 10% auto;
 	text-align: center;
 	background-color: white;
-	opacity: 0.5;
+	opacity: 0.8;
 	border-radius: 10px;
 
 }
@@ -22,28 +22,13 @@ h1 {
 	padding-top: 20px;
 }
 
-h2:before {
-   font-family: FontAwesome;
-   content: '\f10d';
-   display: inline-block;
-   padding: 10px;
-   vertical-align: middle;
-}
-
-h2:after {
-   font-family: FontAwesome;
-   content: '\f10e';
-   display: inline-block;
-   padding: 10px;
-   vertical-align: middle;
-}
-
 button {
 	border-radius: 5px;
 	width: 100px;
 	font-size: 20px;
+	margin: 15px;
 }
  
-.fa, a.tweet {
-	font-size: 20px;
-}
+ #countries {
+ 	font-size: 20px;
+ }

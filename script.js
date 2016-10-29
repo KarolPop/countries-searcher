@@ -1,33 +1,31 @@
-var tweetLink = "https://twitter.com/intent/tweet?text="; 
-var quoteUrl = "http://api.forismatic.com/api/1.0/?method=getQuote&key=867576&format=jsonp&lang=en&jsonp=?";
+var url = 'https://restcountries.eu/rest/v1/name/'; 
+/*var urlWithCapitals = 'https://restcountries.eu/rest/v1/capital/'; */
+var countriesList = $('#countries');
+$('#search').click(searchCountries);
 
-function getQuote() { 
-	$.getJSON(quoteUrl, createTweet); 
-}
-
-function createTweet(input) { 
-	if (!input.quoteAuthor.length) { 
-		input.quoteAuthor = "Unknown author"; 
-	} 
-
-	var tweetText = "Quote of the day - " + input.quoteText + " Author: " + input.quoteAuthor;
-
-	if (tweetText.length > 140) { 
-		getQuote(); 
-	} else { 
-		var tweet = tweetLink + encodeURIComponent(tweetText); 
-		$('.quote').text(input.quoteText); 
-		$('.author').text("Author: " + input.quoteAuthor); 
-		$('.tweet').attr('href', tweet); 
-	}
-}
-
-
-$(document).ready(function() { 
-		getQuote();  
-		$(".trigger").on("click", function() { 
-	    	$(".box").fadeOut(2000, function() {
-	    		getQuote(); 
-	    }).fadeIn(2000) 
-	});
+$('#country-name').keydown(function(event){
+    if(event.keyCode == 13){
+        $('#search').click();
+    }
 });
+
+function searchCountries() { 
+	var countryName = $('#country-name').val(); 
+if(!countryName.length) {
+	countryName = 'Poland'; 	
+}
+
+$.ajax({ 
+		url: url + countryName, 
+		method: 'GET', 
+		success: showCountriesList 
+	}); 
+}
+
+
+function showCountriesList(resp) { 
+	countriesList.empty(); 
+	resp.forEach(function(item) { 
+		$('<li>').text(item.name + ' - ' + item.region + ' - ' + item.capital).appendTo(countriesList);
+	}); 
+}
