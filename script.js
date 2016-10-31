@@ -4,9 +4,10 @@ var countriesList = $('#countries');
 $('#search').click(searchCountries);
 
 $('#country-name').keydown(function(event){
-    if(event.keyCode == 13){
-        $('#search').click();
-    }
+	if(event.keyCode == 13){
+		/*$('#search').click();*/
+		searchCountries();
+	}
 });
 
 function searchCountries() { 
@@ -22,7 +23,7 @@ $.ajax({
 	}); 
 }
 
-
+/*Countries list search result*/ 
 function showCountriesList(resp) { 
 	countriesList.empty(); 
 	resp.forEach(function(item) { 
