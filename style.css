@@ -31,8 +31,11 @@ button {
  
  #countries {
  	font-size: 20px;
+ 	text-align: center;
  }
 
 ul {
 	list-style: none;
+	margin-left: -50px;
  }
+
