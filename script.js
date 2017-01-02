@@ -19,7 +19,7 @@ function searchCountries() {
 $.ajax({ 
 		url: url + countryName, 
 		method: 'GET', 
-		success: showCountriesLists 
+		success: showCountriesList 
 	}); 
 }
 
