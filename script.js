@@ -21,12 +21,17 @@ $('#country-name').keydown(function(event){
 function searchCountries() { 
 	var countryName = $('#country-name').val(); 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	if(!countryName.length) {
 		countryName = 'Poland'; 	
 =======
 if(!countryName.length) {
 	countryName = 'Poland'; 	
 >>>>>>> origin/master
+=======
+	if(!countryName.length) {
+		countryName = 'Poland'; 	
+>>>>>>> refs/remotes/origin/gh-pages
 }
 
 $.ajax({ 
